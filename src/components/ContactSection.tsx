@@ -22,7 +22,7 @@ const ContactSection = () => {
                 <Phone className="w-10 h-10 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Phone</h3>
                 <a
-                  href="tel:9515446778"
+                  href="tel:6822359041"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   951-544-6778
@@ -35,10 +35,10 @@ const ContactSection = () => {
                 <Mail className="w-10 h-10 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Email</h3>
                 <a
-                  href="mailto:ashiva2025@gmail.com"
+                  href="mailto:info@aaatutions.com"
                   className="text-muted-foreground hover:text-primary transition-colors break-all"
                 >
-                  ashiva2025@gmail.com
+                  info@aaatutions.com
                 </a>
               </CardContent>
             </Card>
@@ -58,7 +58,7 @@ const ContactSection = () => {
               className="hover:scale-105 transition-transform"
               asChild
             >
-              <a href="tel:9515446778">Call Now</a>
+              <a href="tel:6822359041">Call Now</a>
             </Button>
             <Button
               size="lg"
@@ -66,7 +66,7 @@ const ContactSection = () => {
               className="hover:scale-105 transition-transform"
               asChild
             >
-              <a href="https://wa.me/919515446778" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/919963967821" target="_blank" rel="noopener noreferrer">
                 WhatsApp
               </a>
             </Button>
