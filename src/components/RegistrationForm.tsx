@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, User, MessageSquare } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const RegistrationForm = () => {
   const { toast } = useToast();
@@ -56,11 +57,29 @@ const RegistrationForm = () => {
       return;
     }
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
+    // Prepare email parameters
+    const templateParams = {
+      student_name: formData.studentName,
+      age: formData.age,
+      parent_phone: formData.parentPhone,
+      parent_email: formData.parentEmail || "Not provided",
+      subjects: formData.subjects.join(", "),
+      message: formData.message || "No additional message",
+    };
+
+    try {
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      console.log("Email sent successfully:", response);
+
       toast({
-        title: "Registration Successful!",
+        title: "Registration Successful! 🎉",
         description: "Thank you! Our team will contact you shortly.",
       });
 
@@ -73,8 +92,17 @@ const RegistrationForm = () => {
         subjects: [],
         message: "",
       });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or contact us directly at info@aaatutions.com",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (

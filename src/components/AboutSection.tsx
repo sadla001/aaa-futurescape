@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Heart, Users, Target } from "lucide-react";
+import founderImage from "@/assets/image.png";
 
 const AboutSection = () => {
   const features = [
@@ -38,6 +39,40 @@ const AboutSection = () => {
               and AI professionals. We combine strong academic teaching with future-ready skills such as coding
               and AI literacy.
             </p>
+          </div>
+
+          {/* Founder Section */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-center mb-12 text-foreground">
+              Meet Our Founder
+            </h3>
+            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-0">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  {/* Founder Image */}
+                  <div className="p-8 md:p-12">
+                    <img
+                      src={founderImage}
+                      alt="Adlagatta Gangadhar - Founder"
+                      className="w-full rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+
+                  {/* Founder Bio */}
+                  <div className="p-8 md:p-12 md:pl-0">
+                    <h4 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                      Adlagatta Gangadhar
+                    </h4>
+                    <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                      Adlagatta Gangadhar is the Headmaster of MPPS Ambedkarnagar, Telangana, and a pioneer in joyful, foundational math learning. Working with children from underprivileged backgrounds, he developed creative, low-cost teaching methods that transformed mathematics into a fun, visual, and confidence-building experience.
+                    </p>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      His <span className="font-semibold text-foreground">Finger-Based Learning Method</span>, combined with Abacus training, helped students master concepts quickly, develop strong concentration, and achieve exceptional results—earning international recognition for their speed, accuracy, and memory skills.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="mb-16">
